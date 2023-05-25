@@ -47,6 +47,8 @@ const Add_product = ({route,navigation})=>{
         }else{
             // console.log('else')
             setProducterror('plz enter code')
+            setProductcode('')
+
 
         }
     }
@@ -60,6 +62,7 @@ const handleqty = (e)=>{
     }else{
         // console.log('else')
         setproductqtyerror('plz enter code')
+        setproductqty('')
 
     }
 }
@@ -87,6 +90,7 @@ const handleamount = (e)=>{
 
     }else{
         setAmountError('plz enter amount')
+        setAmount('')
     }
 
 }
@@ -246,7 +250,7 @@ const clear = ()=>{
             // ref={input => { product_code = input }}
             // clearButtonMode="always" 
             placeholderTextColor='green'
-            // value={product_code}
+            value={product_code}
             placeholder="Product code"
             onChangeText={handleproductcode}
             onBlur={handle_product}
@@ -260,7 +264,7 @@ const clear = ()=>{
             onChangeText={handleqty}
             style={styles.input}
             placeholder="product quantity"
-            // value={product_qty}
+            value={product_qty}
             // tyoe="number"
             />
               <Text style={{color:'red'}}>
@@ -271,7 +275,7 @@ const clear = ()=>{
             <TextInput 
             onChangeText={handletitle}
             style={styles.input}
-            // value={product_title}
+            value={product_title}
             placeholder="Product Title"/>
             <Text  style={{color:'red'}}>
                 {titleError}
@@ -280,7 +284,7 @@ const clear = ()=>{
             
              <TextInput 
             style={styles.input}
-            // value={amount}
+            value={amount}
             placeholder="Product amount"
             multiline
             onChangeText={handleamount}

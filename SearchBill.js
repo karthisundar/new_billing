@@ -15,6 +15,7 @@ export default function SearchBill() {
         const [search,setSearch] = useState('')
         const [bill,setBill] = useState('')
         const [billerror,setBillerror] = useState('')
+        const [searchbil,setSearchbil] = useState([])
 
     
 
@@ -39,6 +40,14 @@ const styles  = StyleSheet.create({
 
         Axios.post(url).then((response)=>{
             console.log(response?.data?.results)
+
+            const result = response?.data?.results
+
+            if(result.length>=1){
+                setSearchbil(result)
+            }else{
+                alert('bill not found')
+            }
         })
 
     }
